@@ -58,12 +58,16 @@ form.addEventListener('submit', function(event) {
     let valid = true;
     let checked = false;
 
+    // Check if first name is minimum 2 letters long
+
     if (firstName.length < 2 || firstName === '') {
       valid = false;
       document.getElementById("errorMessage1").style.display = "block";
     } else {
       document.getElementById("errorMessage1").style.display = "none";
     }
+
+    // Check if first name is minimum 2 letters long
 
     if (lastName.length < 2 || lastName === '') {
       valid = false;
@@ -72,12 +76,16 @@ form.addEventListener('submit', function(event) {
       document.getElementById("errorMessage2").style.display = "none";
     }
 
+    // Check if email has correct format
+
     if (!validateEmail(email) || email === '') {
       valid = false;
       document.getElementById("errorMessage3").style.display = "block";
     } else {
       document.getElementById("errorMessage3").style.display = "none";
     }
+
+    // Check if birthdate isn't empty
 
     if (birthdate === '') {
       valid = false;
@@ -86,12 +94,16 @@ form.addEventListener('submit', function(event) {
       document.getElementById("errorMessage4").style.display = "none";
     }
 
+    // Check if quantity is a number
+
     if (!/^[0-9]+$/.test(quantity) || quantity === '') {
       valid = false;
       document.getElementById("errorMessage5").style.display = "block";
     } else {
       document.getElementById("errorMessage5").style.display = "none";
     }
+
+    // Parse through locations to find if one is checked
     
     locations.forEach(location => {
       if (location.checked) {
@@ -99,12 +111,16 @@ form.addEventListener('submit', function(event) {
       }
     })
 
+    // Handles whether or not one of locations is checked
+
     if (!checked) {
       valid = false;
       document.getElementById("errorMessage6").style.display = "block";
     } else {
       document.getElementById("errorMessage6").style.display = "none";
     }
+
+    // Check if required checkbox is checked
     
     if (!checkBox) {
       valid = false;
@@ -114,6 +130,7 @@ form.addEventListener('submit', function(event) {
     }
 
     // If validation passes, submit the form
+    
     if (valid) {
       form.submit();
     }
