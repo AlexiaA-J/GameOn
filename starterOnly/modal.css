@@ -545,3 +545,31 @@ footer {
   }
 }
 
+.confirmModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(26, 39, 156, 0.4);
+  display: none;
+}
+
+.confirmModalBody {
+  z-index: 100;
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  /* display: none; */
+}
+
+.confirmModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
