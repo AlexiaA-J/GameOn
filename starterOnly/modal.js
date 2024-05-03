@@ -132,6 +132,16 @@ form.addEventListener('submit', function(event) {
     // If validation passes, submit the form
     
     if (valid) {
-      form.submit();
+      closeModal();
+      // Opens confirmation modal 
+      document.querySelector('.confirmModal').style.display = "block";
     }
 });
+
+const confirmModalClose = document.querySelector('.confirmModalClose');
+
+confirmModalClose.addEventListener('click', closeConfirmModal);
+
+function closeConfirmModal() {
+  document.querySelector('.confirmModal').style.display = "none";
+}
